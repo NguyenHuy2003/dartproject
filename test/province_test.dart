@@ -20,15 +20,15 @@ void main() {
     //Kiểm tra tính đồng nhất giữa hai đối tượng Province có cùng dữ liệu.
     test('equality', () {
       final province1 = Province(
-        id: "299",
-        name: "Huyện Ninh Giang",
-        level: "Huyện",
+        id: "30",
+        name: "Tỉnh Hải Dương",
+        level: "Tỉnh",
       );
 
       final province2 = Province(
-        id: "299",
-        name: "Huyện Ninh Giang",
-        level: "Huyện",
+        id: "30",
+        name: "Tỉnh Hải Dương",
+        level: "Tỉnh",
       );
 
       expect(province1, equals(province2));
@@ -37,15 +37,15 @@ void main() {
     //Kiểm tra tính khác biệt giữa hai đối tượng Province có dữ liệu khác nhau.
     test('inequality', () {
       final province1 = Province(
-        id: "299",
-        name: "Huyện Ninh Giang",
-        level: "Huyện",
+        id: "30",
+        name: "Tỉnh Hải Dương",
+        level: "Tỉnh",
       );
 
       final province2 = Province(
-        id: "300",
-        name: "Huyện Ninh Hải",
-        level: "Huyện",
+        id: "01",
+        name: "Thành Phố Hà Nội",
+        level: "Thành Phố Trung Ương",
       );
 
       expect(province1, isNot(equals(province2)));
