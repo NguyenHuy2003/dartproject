@@ -401,12 +401,16 @@ class _Step2FormState extends State<Step2From> {
       // Chuyển đổi chuỗi JSON thành một đối tượng có kiểu dữ liệu từ điển
       Map<String, dynamic> jsonData = json.decode(data);
       // Trích xuất danh sách các tỉnh dữ liệu từ điển và chuyển đổi thành
+      // danh sách các đối tượng Province
+      List provinceData = jsonData['province'];
+      provinceList =
+          provinceData.map((json) => Province.fromMap(json)).toList();
+
+      // Trích xuất danh sách các huyện dữ liệu từ điển và chuyển đổi thành
       // danh sách các đối tượng District
       List districtData = jsonData['district'];
-      districtList = districtData
-          .map((json) => Province.fromMap(json))
-          .cast<District>()
-          .toList();
+      districtList =
+          districtData.map((json) => District.fromMap(json)).toList();
       // Trích xuất danh sách các xã dữ liệu từ điển và chuyển đổi thành
       // danh sách các đối tượng Ward
       List wardData = jsonData['ward'];
