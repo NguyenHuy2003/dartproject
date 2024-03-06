@@ -379,6 +379,7 @@ class _Step2FormState extends State<Step2From> {
   List<District> districtList = [];
   List<Ward> wardList = [];
 
+  @override
   void initSate() {
     loadLocationDate().then((value) => setState(() {}));
     super.initState();
