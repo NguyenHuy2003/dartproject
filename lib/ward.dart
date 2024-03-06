@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Ward {
@@ -64,5 +65,21 @@ class Ward {
         level.hashCode ^
         districtId.hashCode ^
         provinceId.hashCode;
+  }
+
+  Ward copyWith({
+    String? id,
+    String? name,
+    String? level,
+    String? districtId,
+    String? provinceId,
+  }) {
+    return Ward(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      level: level ?? this.level,
+      districtId: districtId ?? this.districtId,
+      provinceId: provinceId ?? this.provinceId,
+    );
   }
 }

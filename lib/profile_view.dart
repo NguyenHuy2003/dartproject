@@ -380,8 +380,8 @@ class _Step2FormState extends State<Step2From> {
   List<Ward> wardList = [];
 
   @override
-  void initSate() {
-    loadLocationDate().then((value) => setState(() {}));
+  void initState() {
+    loadLocationData().then((value) => setState(() {}));
     super.initState();
   }
 
@@ -393,7 +393,7 @@ class _Step2FormState extends State<Step2From> {
   ///
   /// Bắn ngoại lệ Throws [Exception]:
   ///  - Nếu có lỗi xảy ra trong quá trình tải hoặc chuyển đổi dữ liệu
-  Future<void> loadLocationDate() async {
+  Future<void> loadLocationData() async {
     try {
       // Tải nội dung của tệp JSON từ assets
       String data =
@@ -576,12 +576,7 @@ class _Step2FormState extends State<Step2From> {
                 });
               },
               onSelected: (option) {
-                if (widget.userInfo.address?.ward != option) {
-                  setState(() {
-                    widget.userInfo.address?.ward = option;
-                    widget.userInfo.address?.ward = null;
-                  });
-                }
+                widget.userInfo.address?.ward = option;
               },
             ),
             TextFormField(

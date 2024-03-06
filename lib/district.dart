@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class District {
@@ -54,5 +55,19 @@ class District {
   @override
   int get hashCode {
     return id.hashCode ^ name.hashCode ^ level.hashCode ^ provinceId.hashCode;
+  }
+
+  District copyWith({
+    String? id,
+    String? name,
+    String? level,
+    String? provinceId,
+  }) {
+    return District(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      level: level ?? this.level,
+      provinceId: provinceId ?? this.provinceId,
+    );
   }
 }

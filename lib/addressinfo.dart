@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore: file_names
 import 'dart:convert';
 
@@ -67,5 +68,19 @@ class AddressInfo {
         district.hashCode ^
         ward.hashCode ^
         street.hashCode;
+  }
+
+  AddressInfo copyWith({
+    Province? province,
+    District? district,
+    Ward? ward,
+    String? street,
+  }) {
+    return AddressInfo(
+      province: province ?? this.province,
+      district: district ?? this.district,
+      ward: ward ?? this.ward,
+      street: street ?? this.street,
+    );
   }
 }
