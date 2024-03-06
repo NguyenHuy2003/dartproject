@@ -33,8 +33,9 @@ class UserInfo {
       email: map['email'] != null ? map['email'] as String : null,
       phoneNumber:
           map['phoneNumber'] != null ? map['phoneNumber'] as String : null,
-      birthDate:
-          map['birthDate'] != null ? DateTime.parse(map['birthDate']) : null,
+      birthDate: map['birthDate'] != null
+          ? DateTime.fromMillisecondsSinceEpoch(map['birthDate'] as int)
+          : null,
       address: map['address'] != null
           ? AddressInfo.fromMap(map['address'] as Map<String, dynamic>)
           : null,
@@ -69,5 +70,21 @@ class UserInfo {
         phoneNumber.hashCode ^
         birthDate.hashCode ^
         address.hashCode;
+  }
+
+  UserInfo copyWith({
+    String? name,
+    String? email,
+    String? phoneNumber,
+    DateTime? birthDate,
+    AddressInfo? address,
+  }) {
+    return UserInfo(
+      name: name ?? this.name,
+      email: email ?? this.email,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      birthDate: birthDate ?? this.birthDate,
+      address: address ?? this.address,
+    );
   }
 }
