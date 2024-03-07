@@ -396,7 +396,8 @@ class _Step2FormState extends State<Step2From> {
   Future<void> loadLocationData() async {
     try {
       // Tải nội dung của tệp JSON từ assets
-      String data = await rootBundle.loadString('don_vi_hanh_chinh.json');
+      String data =
+          await rootBundle.loadString('assets/don_vi_hanh_chinh.json');
       // Chuyển đổi chuỗi JSON thành một đối tượng có kiểu dữ liệu từ điển
       Map<String, dynamic> jsonData = json.decode(data);
       // Trích xuất danh sách các tỉnh dữ liệu từ điển và chuyển đổi thành
